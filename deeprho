@@ -1,0 +1,113 @@
+#!/bin/bash -e
+################################ with generation #############################
+#############################  Using in Popgen    ############################
+# created by 07/01/2021
+
+usage()
+{
+    echo "Usage ./deeprho [OPTION] 
+    
+    OPTIONS:
+        -f, --msfile <MSFILE>               Path of MS-format input
+        -w, --window-size <WINDOWSIZE>      Specify size for each slidding window
+        -s, --sample-size <POPSIZE>         Specify samples size
+        -m, --model <MODEL>                 Path of trained model
+        -n, --effective-popsize             Specify effective population size
+        -l, --chr-length                    Specify length of the whole loci, unit bp
+        -r, --resolution                    Resoulution of recombination rates (ex. 1000 means rates/1kbp)
+        -h, --help                          Show usage
+    "
+    exit 1;
+}
+
+
+parsed_args=$(getopt -a -o f:w:p:m:n:l:r:h --long msfile:,window-size:,sample-size:,model:,effective-popsize:,chr-length:resolution:,help -- "$@")
+valid_arguments=$?
+
+if [ "$valid_arguments" != "0" ]; then
+    usage
+fi
+
+while true
+do
+    case "$1" in
+        -f | --msfile) MSFILE="$2"  ;   shift 2 ;;
+        -w | --window-size) WINDOWSIZE="$2" ;   shift 2 ;;
+        -s | --sample-size) POPSIZE="$2"    ;   shift 2 ;;
+        -m | --model) MODEL="$2"    ;   shift 2   ;;
+        -n | --effective-popsize) Ne="$2"   ;   shift 2 ;;
+        -l | --chr-length) CHRLENGTH="$2"   ;   shift 2 ;;
+        -r | --resolution) SCALE="$2"       ;   shift 2 ;;
+        -h | --help) usage  ;   shift ;;
+        --) shift; break ;;
+        *)  break ;;
+    esac
+done
+
+DIR=$( dirname $MSFILE );
+FILE=$( basename $MSFILE );
+
+remove()
+{
+    rm -rf $DIR/*.npy
+    rm -rf $DIR/predict.txt
+    rm -rf $DIR/map.jpg
+    rm -rf $DIR/_data/
+    rm -rf $DIR/_windows/
+}
+
+# clean folder
+
+remove
+
+# running msReader
+echo 'Loading data...'
+python scripts/msReader.py -f $MSFILE -c "positions ms_str" -l 1 -s;
+if [ $? -ne 0 ]; then
+    remove
+    exit 1;
+fi
+
+echo 'Splitting into windows...'
+python scripts/splitGenomeInWindows.py -f $DIR/_data/0.txt -n $DIR/ms.values.npy -w $WINDOWSIZE -p $POPSIZE;
+if [ $? -ne 0 ]; then
+    remove
+    exit 2
+fi
+# running genonce
+# echo 'generating features...'
+python scripts/genonce.py $DIR/windows.npy;
+if [ $? -ne 0 ]; then
+    remove
+    exit 3
+fi
+# running rentplus
+python scripts/rentplus.py -d $DIR/_windows/ -c 36
+if [ $? -ne 0 ]; then 
+    remove
+    exit 4
+fi
+# computing robinson-foulds
+echo 'Computing robinson foulds distance...'
+java -jar scripts/ComputeRF.jar -d $DIR/_windows/ -c 5 -w
+if [ $? -ne 0 ]; then
+    remove
+    exit 5
+fi
+
+# running mergeall
+echo 'Combining features...'
+python scripts/mergeall.py -d $DIR/_windows
+if [ $? -ne 0 ]; then
+    remove
+    exit 6
+fi
+
+echo 'Predicting...'
+python scripts/predict.py -i $DIR/x.npy -p $DIR/ms.pos.npy -m $MODEL -n $Ne  -ps $POPSIZE -s $SCALE -l $CHRLENGTH 
+if [ $? -ne 0 ]; then
+    remove
+    exit 7
+fi
+echo 'Prediction is saved as predict.txt!'
+# echo x.npy has been generated!
