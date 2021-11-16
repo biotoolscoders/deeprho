@@ -3,20 +3,20 @@
 
 ---
 ### Requirements
-- Runtime: Linux, Python3, Java Runtime Environment(or JDK).
+- Runtime: Linux with Python3 and Java Runtime Environment(or JDK).
 - numpy >= 1.19.0
 - pandas >= 1.2.5
 - matplotlib >= 3.4.2
 - tensorflow >= 2.4.0 (GPU version is preferred)
 - tqdm >= 4.61.1
 
-Note: `java` should be added to `$PATH` and be executed anywhere in system.
+Note: `java` should be added to `$PATH` and is able to be executed anywhere in system.
 
 ### Input formats
 - MS-like format
 - Fasta (coming soon)
 
-### Usage (example testing data was provided.)
+### Usage
 1. Unzip `deeprho` into any directory, for example `/path/to/deeprho`.
 2. Enter that directory `cd /path/to/deeprho`
 3. Run `./deeprho -f data/ms.data -w 50 -s 100 -m pretrain_model/snp50_rho200.mdl -n 100000 -l 100000 -r 1000`
