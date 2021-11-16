@@ -1,4 +1,4 @@
-# deeprho
+# DeepRho
 `deeprho` is an open-source software developed for per-base recombination rate estimation from inferred genealogies using deep learning. `deeprho` makes estimates based on LD patterns and genealogical patterns inferred by *RENT+*[1].
 
 ---
