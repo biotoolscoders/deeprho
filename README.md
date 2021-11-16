@@ -21,11 +21,11 @@ Note: `java` should be added to `$PATH` and is able to be executed anywhere in s
 2. Enter that directory `cd /path/to/deeprho`
 3. Run `./deeprho -f data/ms.data -w 50 -s 100 -m pretrain_model/snp50_rho200.mdl -n 100000 -l 100000 -r 1000`
     - -f, --msfile <MSFILE>               Path of MS-format input
-    - -w, --window-size <WINDOWSIZE>      Specify size for each slidding window (only 50 can be used currently)
-    - -s, --sample-size <POPSIZE>         Specify samples size
+    - -w, --window-size <WINDOWSIZE>      Size for each slidding window (only 50 can be used currently)
+    - -s, --sample-size <POPSIZE>         Samples size
     - -m, --model <MODEL>                 Path of trained model
-    - -n, --effective-popsize             Specify effective population size
-    - -l, --chr-length                    Specify length of haplotypes in unit bp
+    - -n, --effective-popsize             Effective population size
+    - -l, --chr-length                    Length of haplotypes in unit bp
     - -r, --resolution                    Resoulution of recombination rates (ex. 1000 means rates/1kbp)
     - -h, --help                          Show usage
 4. File `predict.txt` shows the inferred recombination map.
