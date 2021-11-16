@@ -33,6 +33,8 @@ Note: `java` should be added to `$PATH` and is able to be executed anywhere in s
   
 Notes: `deeprho` should be ran directly under its root directory. As `deeprho` will generate a bunch of intermediate files inside the folder where inputs are, to avoid confliction, we strongly suggest users to create a new folder for each input file respectively.
   
+Contact email: haotianzh@uconn.edu.
+    
 ### Reference:
 [1]. Mirzaei S, Wu Y. RENT+: an improved method for inferring local genealogical trees from haplotypes with recombination. Bioinformatics. 2017 Apr 1;33(7):1021-1030.
   
