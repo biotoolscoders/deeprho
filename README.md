@@ -24,7 +24,7 @@ Note: `java` should be added to `$PATH` and is able to be executed anywhere in s
 ### Usage
 1. Unzip `deeprho` into any directory, for example `/path/to/deeprho`.
 2. Enter that directory `cd /path/to/deeprho`
-3. Run `./deeprho -f data/ms.data -w 50 -s 100 -m pretrain_models/snp50_rho200.mdl -n 100000 -l 100000 -r 1000`
+3. Run `./deeprho -f data/simulated_mu1e-8_r8.61e-8_samples100_len1e5/data.txt -w 50 -s 100 -m pretrain_models/snp50_rho200.mdl -n 100000 -l 100000 -r 1000`
 4. | Arguments |       Alternative Names        |  Descriptions                                                |
    | --------- | ------------------------------ | -------------------------------------------------------------|
    | -f        | --msfile <MSFILE>              | Path of MS-format input                                      |
@@ -35,13 +35,28 @@ Note: `java` should be added to `$PATH` and is able to be executed anywhere in s
    | -l        | --chr-length                   | Length of haplotypes in unit bp                              |
    | -r        | --resolution                   | Resoulution of recombination rates(ex. 1000 means rates/1kbp)|
    | -h        | --help                         | Show usage                                                   |
-5. File `data/predict.txt` shows the inferred recombination map.
-6. Type `./deeprho --help` to review usage.
+5. Type `./deeprho --help` to review usage.
   
 Notes: `deeprho` should be ran directly under its root directory. As `deeprho` will generate a bunch of intermediate files inside the folder where inputs are, to avoid confliction, we strongly suggest users to create a new folder for each input file respectively.
 
 ### Results
-`data/map.jpg` plots the recombination map.
+`data/simulated_mu1e-8_r8.61e-8_samples100_len1e5/map.jpg` plots the recombination map.
+   
+`data/simulated_mu1e-8_r8.61e-8_samples100_len1e5/predict.txt` shows the inferred recombination map and consists of three columns specifying per-base rate and its corresponding interval. 
+   
+The estimated map shows like, 
+|Rate(cM/Mb)	        |Start|End  |
+|----------------------|-----|-----|
+|6.472496479428238e-08 |30   |2626 |
+|5.8559982249993625e-08|2626 |5383 |
+|8.013135187014052e-08 |5383 |7686 |
+|9.297690440698997e-08 |7686 |10014|
+|6.951138383643149e-08 |10014|12323|
+|9.179549591381548e-08 |12323|15114|
+|8.611719242697401e-08 |15114|16966|
+|8.797485828399659e-08 |16966|19366|
+|7.588521843282585e-08 |19366|21706|
+
 
 Contact Email: haotianzh@uconn.edu.
     
