@@ -1,7 +1,11 @@
 # DeepRho
 DeepRho: software accompanyment for "DeepRho: Accurate Estimation of Recombination Rate from Inferred Genealogies using Deep Learning", Haotian Zhang and Yufeng Wu, manuscript, 2021.
 
-`deeprho` is an open-source software developed for per-base recombination rate estimation from inferred genealogies using deep learning. `deeprho` makes estimates based on LD patterns and genealogical patterns inferred by *RENT+*[1].
+DeepRho constructs images from population genetic data and takes advantage of the power of convolutional neural network (CNN) in image classification to etstimate recombination rate. The key idea of DeepRho is generating genetics-informative images based on inferred gene geneaologies and linkage disequilibrium from population genetic data.
+
+# Code
+`deeprho` is an open-source software developed for per-base recombination rate estimation from inferred genealogies using deep learning.  
+`deeprho` makes estimates based on LD patterns and genealogical patterns inferred by *RENT+*[1].
 
 ---
 ### Requirements
