@@ -20,7 +20,7 @@ DeepRho constructs images from population genetic data and takes advantage of th
 Note: All dependencies are listed in `environment.yml` and their versions can be slightly modified to make them compatible with your personal settings. `java` should be already added to `$PATH` and is able to be executed anywhere in the system.
 
 ### Input formats
-- MS-like format (3 example files are provided)
+- MS-like format (3 example files are provided in `data/`)
 - Fasta (coming soon)
 
 
