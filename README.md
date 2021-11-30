@@ -11,17 +11,17 @@ DeepRho constructs images from population genetic data and takes advantage of th
 - OS: Linux(x64), Windows(x64)
 - Software: [Conda](https://docs.conda.io/projects/conda/en/latest/index.html), [Git](https://git-scm.com/) (optional)
 
-
-### Input formats
-- MS-like format
-- Fasta (coming soon)
-
 ### Installation
 1. Clone from GitHub using `git clone https://github.com/biotoolscoders/deeprho.git` or Download & unzip the file to your local directory. 
 3. Enter the directory `cd deeprho`
 4. Create a virtual environment `conda env create -f environment.yml`
 
 Note: All dependencies are listed in `environment.yml` and their versions can be slightly modified to make them compatible with your personal settings. `java` should be already added to `$PATH` and is able to be executed anywhere in the system.
+
+### Input formats
+- MS-like format (3 example files are provided)
+- Fasta (coming soon)
+
 
 ### Usage
 1. Run `./deeprho -f data/simulated_mu1e-8_r8.61e-8_samples100_len1e5/data.txt -w 50 -s 100 -m pretrain_models/snp50_rho200.mdl -n 100000 -l 100000 -r 1000`
