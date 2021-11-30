@@ -40,7 +40,7 @@ Note: All dependencies are listed in `environment.yml` and their versions can be
    | -h        | --help                         | Show usage                                                   |
 3. Type `./deeprho --help` to review usage.
   
-# Notes 
+#### Notes 
    `deeprho` should be run directly under its root directory. As `deeprho` will generate a bunch of intermediate files inside the folder where inputs are. So to avoid conflicts, we strongly suggest users to create a new folder for each input file respectively.
 
 ### Results
