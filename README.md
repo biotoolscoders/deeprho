@@ -40,7 +40,8 @@ Note: All dependencies are listed in `environment.yml` and their versions can be
    | -h        | --help                         | Show usage                                                   |
 3. Type `./deeprho --help` to review usage.
   
-Notes: `deeprho` should be ran directly under its root directory. As `deeprho` will generate a bunch of intermediate files inside the folder where inputs are, to avoid confliction, we strongly suggest users to create a new folder for each input file respectively.
+#Notes 
+   `deeprho` should be run directly under its root directory. As `deeprho` will generate a bunch of intermediate files inside the folder where inputs are. So to avoid conflicts, we strongly suggest users to create a new folder for each input file respectively.
 
 ### Results
 `data/simulated_mu1e-8_r8.61e-8_samples100_len1e5/map.jpg` plots the recombination map.
