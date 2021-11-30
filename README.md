@@ -63,5 +63,5 @@ The estimated map shows like,
 Contact Email: haotianzh@uconn.edu.
     
 ### Reference:
-[^1]: Mirzaei S, Wu Y. RENT+: an improved method for inferring local genealogical trees from haplotypes with recombination. Bioinformatics. 2017 Apr 1;33(7):1021-1030.
+[^1]: [Mirzaei S, Wu Y. RENT+: an improved method for inferring local genealogical trees from haplotypes with recombination. Bioinformatics. 2017 Apr 1;33(7):1021-1030.](https://github.com/SajadMirzaei/RentPlus)
   
