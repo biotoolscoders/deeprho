@@ -12,10 +12,10 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from scipy.stats import pearsonr
 import time
 import multiprocessing as mp
-import dendropy
-import msprime as msp
-from dendropy.calculate.treecompare import unweighted_robinson_foulds_distance
-from dendropy.calculate.treecompare import robinson_foulds_distance
+# import dendropy
+# import msprime as msp
+# from dendropy.calculate.treecompare import unweighted_robinson_foulds_distance
+# from dendropy.calculate.treecompare import robinson_foulds_distance
 
 def plot(data, color='red', names=None):
     y_major_locator = MultipleLocator(0.3e-7)
