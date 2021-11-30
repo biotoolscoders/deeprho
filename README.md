@@ -8,24 +8,24 @@ DeepRho constructs images from population genetic data and takes advantage of th
 
 ---
 ### Requirements
-- Runtime: Linux with Python3 and Java Runtime Environment(or JDK).
-- numpy >= 1.19.0
-- pandas >= 1.2.5
-- matplotlib >= 3.4.2
-- tensorflow >= 2.4.0 (GPU version is preferred)
-- tqdm >= 4.61.1
+- OS: Linux(x64), Windows(x64)
+- Software: [Conda](https://docs.conda.io/projects/conda/en/latest/index.html), [Git](https://git-scm.com/) (optional)
 
-Note: `java` should be added to `$PATH` and is able to be executed anywhere in system.
 
 ### Input formats
 - MS-like format
 - Fasta (coming soon)
 
+### Installation
+1. Clone from GitHub using `git clone https://github.com/biotoolscoders/deeprho.git` or Download & unzip the file to your local directory. 
+3. Enter the directory `cd deeprho`
+4. Create a virtual environment `conda env create -f environment.yml`
+
+Note: All dependencies are listed in `environment.yml` and their versions can be slightly modified to make them compatible with your personal settings. `java` should be already added to `$PATH` and is able to be executed anywhere in the system.
+
 ### Usage
-1. Unzip `deeprho` into any directory, for example `/path/to/deeprho`.
-2. Enter that directory `cd /path/to/deeprho`
-3. Run `./deeprho -f data/simulated_mu1e-8_r8.61e-8_samples100_len1e5/data.txt -w 50 -s 100 -m pretrain_models/snp50_rho200.mdl -n 100000 -l 100000 -r 1000`
-4. | Arguments |       Alternative Names        |  Descriptions                                                |
+1. Run `./deeprho -f data/simulated_mu1e-8_r8.61e-8_samples100_len1e5/data.txt -w 50 -s 100 -m pretrain_models/snp50_rho200.mdl -n 100000 -l 100000 -r 1000`
+2. | Arguments |       Alternative Names        |  Descriptions                                                |
    | --------- | ------------------------------ | -------------------------------------------------------------|
    | -f        | --msfile <MSFILE>              | Path of MS-format input                                      |
    | -w        | --window-size <WINDOWSIZE>     | Size for each slidding window (only 50 can be used currently)|
@@ -35,7 +35,7 @@ Note: `java` should be added to `$PATH` and is able to be executed anywhere in s
    | -l        | --chr-length                   | Length of haplotypes in unit bp                              |
    | -r        | --resolution                   | Resoulution of recombination rates(ex. 1000 means rates/1kbp)|
    | -h        | --help                         | Show usage                                                   |
-5. Type `./deeprho --help` to review usage.
+3. Type `./deeprho --help` to review usage.
   
 Notes: `deeprho` should be ran directly under its root directory. As `deeprho` will generate a bunch of intermediate files inside the folder where inputs are, to avoid confliction, we strongly suggest users to create a new folder for each input file respectively.
 
