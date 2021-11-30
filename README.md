@@ -26,6 +26,7 @@ Note: All dependencies are listed in `environment.yml` and their versions can be
 
 ### Usage
 1. Run `./deeprho -f data/simulated_mu1e-8_r8.61e-8_samples100_len1e5/data.txt -w 50 -s 100 -m pretrain_models/snp50_rho200.mdl -n 100000 -l 100000 -r 1000`
+
 2. | Arguments |       Alternative Names        |  Descriptions                                                |
    | --------- | ------------------------------ | -------------------------------------------------------------|
    | -f        | --msfile <MSFILE>              | Path of MS-format input                                      |
