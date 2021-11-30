@@ -15,6 +15,7 @@ DeepRho constructs images from population genetic data and takes advantage of th
 1. Clone from GitHub using `git clone https://github.com/biotoolscoders/deeprho.git` or Download & unzip the file to your local directory. 
 3. Enter the directory `cd deeprho`
 4. Create a virtual environment `conda env create -f environment.yml`
+5. Activate conda environment `conda activate deeprho`
 
 Note: All dependencies are listed in `environment.yml` and their versions can be slightly modified to make them compatible with your personal settings. `java` should be already added to `$PATH` and is able to be executed anywhere in the system.
 
