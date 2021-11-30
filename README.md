@@ -10,6 +10,7 @@ DeepRho constructs images from population genetic data and takes advantage of th
 ### Requirements
 - OS: Linux(x64), Windows(x64)
 - Software: [Conda](https://docs.conda.io/projects/continuumio-conda/en/latest/user-guide/install/download.html), [Git](https://git-scm.com/)
+- Device: GPU (optional)
 
 ### Installation
 1. Clone from GitHub using `git clone https://github.com/biotoolscoders/deeprho.git` or Download & unzip the file to your local directory. 
@@ -17,7 +18,7 @@ DeepRho constructs images from population genetic data and takes advantage of th
 4. Create a virtual environment `conda env create -f environment.yml`
 5. Activate conda environment `conda activate deeprho`
 
-Note: All dependencies are listed in `environment.yml` and their versions can be slightly modified to make them compatible with your personal settings. `java` should be already added to `$PATH` and is able to be executed anywhere in the system.
+Note: All dependencies are listed in `environment.yml` and their versions can be slightly modified to make them compatible with your personal settings. If a CUDA-Enabled GPU is avaliable on your device, please replace `tensorflow` with `tensorflow-gpu` in `environment.yml` for utilizing graphic card.
 
 ### Input formats
 - MS-like format (3 example files are provided in `data/`)
