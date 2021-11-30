@@ -9,7 +9,7 @@ DeepRho constructs images from population genetic data and takes advantage of th
 ---
 ### Requirements
 - OS: Linux(x64), Windows(x64)
-- Software: [Conda](https://docs.conda.io/projects/conda/en/latest/index.html), [Git](https://git-scm.com/) (optional)
+- Software: [Conda](https://docs.conda.io/projects/continuumio-conda/en/latest/user-guide/install/download.html), [Git](https://git-scm.com/)
 
 ### Installation
 1. Clone from GitHub using `git clone https://github.com/biotoolscoders/deeprho.git` or Download & unzip the file to your local directory. 
