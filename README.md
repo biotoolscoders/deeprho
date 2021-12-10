@@ -8,9 +8,11 @@ DeepRho constructs images from population genetic data and takes advantage of th
 
 ---
 ### Requirements
-- OS: Linux(x64), Windows(x64), MacOS (may need to change deeprho a little; on our test on MacOS 10.12 Sierra, need to remove -o option from getopt)
+- OS: Linux, Windows, MacOS* 
 - Software: [Conda](https://docs.conda.io/projects/continuumio-conda/en/latest/user-guide/install/download.html), [Git](https://git-scm.com/)
 - Device: CUDA-Enabled GPU (optional)
+
+**Important Note:**  For MacOS, users need to change executable file `deeprho` a little; on our test on MacOS 10.12 Sierra, need to remove -o option from getopt. Alternatively, users can manually install `gnu-getopt` through MacPort.
 
 ### Installation
 1. Clone from GitHub using `git clone https://github.com/biotoolscoders/deeprho.git` or Download & unzip the file to your local directory. 
