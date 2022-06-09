@@ -14,4 +14,5 @@ dependencies:
   - pip=21.3.1
   - pip:
     - tensorflow==2.4.0
+    # - tensorflow-gpu==2.4.0 # if cuda-enabled gpu available  
 prefix: /home/haz19024/anaconda3/envs/deeprho
